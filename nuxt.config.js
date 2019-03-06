@@ -1,6 +1,5 @@
 const pkg = require('./package')
 
-
 module.exports = {
   mode: 'universal',
 
@@ -15,7 +14,12 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: 'https://use.fontawesome.com/releases/v5.7.2/css/all.css'
+      }
     ]
   },
 
@@ -27,14 +31,12 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: [
-  ],
+  css: [],
 
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [
-  ],
+  plugins: ['@/plugins/bootstrap-vue'],
 
   /*
   ** Nuxt.js modules
@@ -43,8 +45,11 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://bootstrap-vue.js.org/docs/
-    'bootstrap-vue/nuxt',
-    ['storyblok-nuxt', {accessToken: "0Afppk0YhTL5pUDguXMvCAtt", cacheProvider: "memory"}]
+    ['bootstrap-vue/nuxt'],
+    [
+      'storyblok-nuxt',
+      { accessToken: '0Afppk0YhTL5pUDguXMvCAtt', cacheProvider: 'memory' }
+    ]
   ],
   /*
   ** Axios module configuration
@@ -60,8 +65,6 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
-      
-    }
+    extend(config, ctx) {}
   }
 }
