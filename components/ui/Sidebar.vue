@@ -1,18 +1,38 @@
-<template>
-  <b-col md="4" cols="12" class="text-left sidebarcontainer">
-    <div class="sidebar">
-      <slot name="maintitle"></slot>
-      <slot name="subtitle"></slot>
-      <slot name="description"></slot>
-      <div class="footer-area">
-        <slot name="footer"></slot>
+<template >
+  <transition name="slide" mode="in-out">
+    <b-col
+      md="4"
+      cols="12"
+      class="text-left sidebarcontainer"
+      :style="{backgroundColor: blok.backgroundcolor}"
+    >
+      <nuxt-link to="/" v-if="blok.backbutton">
+        <div class="back mt-4">
+          <i class="fas fa-caret-left"></i> Back to Projects
+        </div>
+      </nuxt-link>
+      <div class="sidebar">
+        <div class="title">
+          <h2>{{ blok.title }}</h2>
+        </div>
+        <div class="subtitle">
+          <p class="lead">{{blok.subtitle}}</p>
+        </div>
+        <div class="description">
+          <component :key="blok._uid" v-for="blok in blok.body" :is="blok.component" :blok="blok"></component>
+        </div>
+        <div class="footer-area">
+          <component :key="blok._uid" v-for="blok in blok.footer" :is="blok.component" :blok="blok"></component>
+        </div>
       </div>
-    </div>
-  </b-col>
+    </b-col>
+  </transition>
 </template>
 
 <script>
-export default {}
+export default {
+  props: ['blok']
+}
 </script>
 
 <style scoped lang="scss">
@@ -20,6 +40,7 @@ export default {}
   background-repeat: repeat;
   background-size: auto;
   background-attachment: fixed;
+  min-height: 100vh;
 }
 
 .sidebar {
@@ -43,19 +64,14 @@ export default {}
   padding-top: 25px;
 }
 
-.social-img {
-  margin-right: 9px;
-  margin-bottom: 8px;
-  margin-left: 9px;
-  padding-right: 0;
-  padding-left: 0;
-}
-
 .sidebar-link {
   padding: 50px;
 }
 
 @media (max-width: 768px) {
+  .sidebarcontainer {
+    min-height: 30vh;
+  }
   .sidebar {
     position: static;
     text-align: center !important;
@@ -70,5 +86,16 @@ export default {}
   .foodmenu {
     justify-content: center;
   }
+}
+
+.slide-enter-active {
+  transition: all 0.8s ease;
+}
+.slide-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-enter, .slide-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(-100%);
 }
 </style>

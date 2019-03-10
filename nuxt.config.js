@@ -19,6 +19,12 @@ module.exports = {
         rel: 'stylesheet',
         type: 'text/css',
         href: 'https://use.fontawesome.com/releases/v5.7.2/css/all.css'
+      },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href:
+          'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css'
       }
     ]
   },
@@ -36,7 +42,7 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ['@/plugins/bootstrap-vue'],
+  plugins: ['@/plugins/bootstrap-vue', '@/plugins/components'],
 
   /*
   ** Nuxt.js modules
