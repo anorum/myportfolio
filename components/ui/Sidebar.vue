@@ -6,14 +6,16 @@
       class="text-left sidebarcontainer"
       :style="[getBackground.backgroundpath ? {backgroundColor: blok.backgroundcolor, backgroundImage: 'url(' + getBackground.backgroundpath + ')'} : {backgroundColor: blok.backgroundcolor}]"
     >
-      <div class="d-flex justify-content-between mt-4" v-if="blok.backbutton">
-        <nuxt-link to="/">
-          <div class="back" :style="{ color: textColor }">
-            <i class="fas fa-caret-left"></i> Back to Projects
+      <div class="lock">
+        <div class="d-flex justify-content-between mt-4" v-if="blok.backbutton">
+          <nuxt-link to="/">
+            <div :style="{ color: textColor }">
+              <i class="fas fa-caret-left"></i> Back to Projects
+            </div>
+          </nuxt-link>
+          <div @click="$emit('hideclicked')">
+            <i class="fas fa-times" :style="{ color: textColor }"></i>
           </div>
-        </nuxt-link>
-        <div @click="$emit('hideclicked')">
-          <i class="fas fa-times" :style="{ color: textColor }"></i>
         </div>
       </div>
       <div class="sidebar" :style="{ color: textColor }">
@@ -94,6 +96,11 @@ function HEX2RGB(hex) {
   background-size: auto;
   background-attachment: fixed;
   min-height: 100vh;
+}
+
+.lock {
+  position: sticky;
+  top: 1rem;
 }
 
 .sidebar {

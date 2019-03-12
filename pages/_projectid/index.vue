@@ -109,6 +109,8 @@ export default {
 .showsidecontainer {
   transition: all 0.5s;
   animation-delay: 0s;
+  position: sticky;
+  top: 1rem;
 }
 
 .delay {

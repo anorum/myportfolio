@@ -10,6 +10,7 @@ import DropdownMenuImage from '~/components/DropdownMenuImage'
 import DisplayInline from '~/components/DisplayInline'
 import FlexDisplay from '~/components/FlexDisplay'
 import FlexColumn from '~/components/FlexColumn'
+import iPhoneiFrame from '~/components/iPhoneiFrame'
 
 Vue.component('ProjectCard', ProjectCard)
 Vue.component('ProjectList', ProjectList)
@@ -22,3 +23,4 @@ Vue.component('DropdownMenuImage', DropdownMenuImage)
 Vue.component('DisplayInline', DisplayInline)
 Vue.component('FlexDisplay', FlexDisplay)
 Vue.component('FlexColumn', FlexColumn)
+Vue.component('iPhoneiFrame', iPhoneiFrame)
