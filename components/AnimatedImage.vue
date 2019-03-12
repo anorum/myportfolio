@@ -1,5 +1,7 @@
 <template>
-  <div>{{ blok.animation}}</div>
+  <div>
+    <img :src="blok.image">
+  </div>
 </template>
 
 <script>

@@ -1,19 +1,23 @@
 export const state = () => ({
-    projects: null
+  background: 'Not Hungry',
+  backgroundpath: null
 })
 
 export const getters = {
-
+  getBackground(state) {
+    return state
+  }
 }
 
 export const mutations = {
-    mutateProjects(state, projects) {
-        state.projects = projects
-    }
+  mutateBackground(state, choice) {
+    state.background = choice.choice
+    state.backgroundpath = choice.path
+  }
 }
 
 export const actions = {
-    setProjects({ commit }, projects) {
-        commit('mutateProjects', projects)
-    }
+  setBackground({ commit }, choice) {
+    commit('mutateBackground', choice)
+  }
 }

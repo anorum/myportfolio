@@ -7,9 +7,16 @@
         :is="blok.component"
         :blok="blok"
       ></component>
-      <b-col md="8" cols="12">
-        <ProjectList :projects="projects.data.stories"></ProjectList>
-      </b-col>
+      <transition
+        name="custom-classes-transition"
+        enter-active-class="animated bounceInRight"
+        leave-active-class="animated bounceOutRight"
+        appear
+      >
+        <b-col md="8" cols="12">
+          <ProjectList :projects="projects.data.stories"></ProjectList>
+        </b-col>
+      </transition>
     </b-row>
   </section>
 </template>
@@ -32,7 +39,7 @@ export default {
       page,
       projects
     }
-  },
+  }
   /*   asyncData(context) {
     return context.app.$storyapi
       .get('cdn/stories', {
@@ -57,14 +64,6 @@ export default {
         }
       })
   }, */
-  methods: {
-    ...mapActions({
-      setProjects: 'setProjects'
-    })
-  },
-  mounted() {
-    this.setProjects(this.projects)
-  }
 }
 </script>
 
