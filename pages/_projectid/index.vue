@@ -39,7 +39,7 @@
               </div>
             </div>
             <div class="content-body" :class="{nopadding: isExternal}">
-              <iframe v-if="isExternal" :src="externalLink" frameborder="0"/>
+              <iframe id="jupyter" v-if="isExternal" :src="externalLink" frameborder="0"/>
               <div v-if="!isExternal">
                 <component
                   :key="blok._uid"
@@ -136,7 +136,7 @@ export default {
   }
 }
 
-.content iframe {
+#jupyter {
   min-width: 100%;
   min-height: 100vh;
 }
@@ -161,8 +161,16 @@ export default {
 }
 
 .line {
-  width: 30px;
-  height: 3px;
+  width: 66px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.line-centered {
+  margin: 0 auto;
+  width: 66px;
+  height: 4px;
+  border-radius: 2px;
 }
 
 .expandicon {

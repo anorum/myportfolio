@@ -1,5 +1,5 @@
 <template>
-  <b-row :align-v="blok.contentVerticalAlign">
+  <b-row :align-v="blok.contentVerticalAlign" class="mt-4 mb-4">
     <b-col md="6" cols="12" :class="blok.contentLeftAlign">
       <component
         :key="blok._uid"
