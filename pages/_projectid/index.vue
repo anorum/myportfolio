@@ -1,5 +1,5 @@
 <template>
-  <section class="container-fluid" :style="{'border-left-color': color}" v-editable="alldata">
+  <section class="container-fluid" :style="cssProps" v-editable="alldata">
     <b-row>
       <component
         :key="blok._uid"
@@ -19,6 +19,7 @@
           name="custom-classes-transition"
           enter-active-class="animated bounceInLeft delay"
           leave-active-class="animated bounceOutLeft quick"
+          mode="in-out"
           appear
         >
           <div v-show="fullscreen" class="showsidecontainer" @click="fullscreen = false">
@@ -37,6 +38,9 @@
                 <h1>{{ introduction }}</h1>
                 <div class="line mt-4" :style="{backgroundColor: color}"></div>
               </div>
+            </div>
+            <div v-if="headingimage" id="headingimage">
+              <img :src="headingimage">
             </div>
             <div class="content-body" :class="{nopadding: isExternal}">
               <iframe id="jupyter" v-if="isExternal" :src="externalLink" frameborder="0"/>
@@ -82,7 +86,8 @@ export default {
           externalLink: res.data.story.content.externalLink.url,
           content: res.data.story.content.content,
           contents: res.data.story.content.contents,
-          sidebar: res.data.story.content.sidebar
+          sidebar: res.data.story.content.sidebar,
+          headingimage: res.data.story.content.headingimage
         }
       })
   },
@@ -96,20 +101,37 @@ export default {
         window.location.reload()
       }
     })
+  },
+  computed: {
+    cssProps() {
+      return {
+        '--heading-colors': this.color
+      }
+    }
   }
 }
 </script>
 
 <style lang="scss">
 .container-fluid {
-  border-left: 5px solid;
+  border-left: 5px solid var(--heading-colors);
   min-height: 100vh;
   transition: all 1s;
 }
+
+#headingimage {
+  text-align: center;
+  margin-top: -20%;
+}
+
+.contentcontainer {
+  padding: 0px;
+}
+
 .showsidecontainer {
   transition: all 0.5s;
   animation-delay: 0s;
-  position: sticky;
+  position: fixed;
   top: 1rem;
 }
 
@@ -125,6 +147,8 @@ export default {
   img {
     max-width: 55vw;
     max-height: 50vh;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
   }
 }
 
@@ -151,13 +175,14 @@ export default {
   display: -ms-flexbox;
   display: flex;
   height: auto;
-  padding: 10%;
+  padding: 10% 15% 25% 15%;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
   text-align: left;
-  max-width: 980px;
+  background-color: #f0f6fa;
+  //max-width: 980px;
 }
 
 .line {
@@ -178,9 +203,32 @@ export default {
 }
 
 .fullwidth {
-  flex: 0 0 95%;
+  flex: 0 0 100%;
   max-width: 100%;
   transition: all 1s;
   transition-delay: 0.8s;
 }
+
+h3,
+h4 {
+  color: var(--heading-colors);
+  border-left: 3px solid var(--heading-colors);
+  padding-left: 15px;
+}
+
+@media (max-width: 768px) {
+  .container-fluid {
+    border-left: 0px;
+  }
+}
+
+/* Nice Code to add a line below a header
+.content h2:after {
+  content: '';
+  display: block;
+  width: 66px;
+  padding-top: 20px;
+  border-bottom: 4px solid var(--heading-colors);
+}
+*/
 </style>

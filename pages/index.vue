@@ -67,5 +67,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.container-fluid {
+  border-left: 0px;
+}
 </style>

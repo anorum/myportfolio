@@ -11,6 +11,7 @@ import DisplayInline from '~/components/DisplayInline'
 import FlexDisplay from '~/components/FlexDisplay'
 import FlexColumn from '~/components/FlexColumn'
 import iPhoneiFrame from '~/components/iPhoneiFrame'
+import Loading from '~/components/Loading'
 
 Vue.component('ProjectCard', ProjectCard)
 Vue.component('ProjectList', ProjectList)
@@ -24,3 +25,4 @@ Vue.component('DisplayInline', DisplayInline)
 Vue.component('FlexDisplay', FlexDisplay)
 Vue.component('FlexColumn', FlexColumn)
 Vue.component('iPhoneiFrame', iPhoneiFrame)
+Vue.component('Loading', Loading)

@@ -1,5 +1,5 @@
 <template>
-  <div class="dropdown">
+  <div class="dropdown mt-4">
     <a class="btn btn-light" role="button" v-on:click="show = !show">{{ getBackground.background }}</a>
     <div class="dropdown-menu show" v-if="show">
       <a
@@ -46,7 +46,7 @@ img {
 }
 
 .btn-light {
-  padding-top: 0;
+  color: #24344b !important;
 }
 
 .dropdown-menu {

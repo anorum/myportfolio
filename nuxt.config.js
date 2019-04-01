@@ -32,7 +32,10 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  /*loading: {
+    color: '#fff'
+  },*/
+  loading: '~/components/Loader.vue',
 
   /*
   ** Global CSS

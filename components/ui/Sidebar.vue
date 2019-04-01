@@ -1,4 +1,4 @@
-<template >
+<template>
   <transition name="slide" mode="in-out" appear>
     <b-col
       md="4"
@@ -19,17 +19,24 @@
         </div>
       </div>
       <div class="sidebar" :style="{ color: textColor }">
-        <div class="title">
-          <h2>{{ blok.title }}</h2>
-        </div>
-        <div class="subtitle">
-          <p class="lead">{{blok.subtitle}}</p>
-        </div>
-        <div class="description">
-          <component :key="blok._uid" v-for="blok in blok.body" :is="blok.component" :blok="blok"></component>
-        </div>
-        <div class="footer-area">
-          <component :key="blok._uid" v-for="blok in blok.footer" :is="blok.component" :blok="blok"></component>
+        <div :style="{backgroundColor: blok.backgroundcolor}">
+          <div class="title">
+            <h2>{{ blok.title }}</h2>
+          </div>
+          <div class="subtitle">
+            <p class="lead">{{blok.subtitle}}</p>
+          </div>
+          <div class="description">
+            <component :key="blok._uid" v-for="blok in blok.body" :is="blok.component" :blok="blok"></component>
+          </div>
+          <div class="footer-area">
+            <component
+              :key="blok._uid"
+              v-for="blok in blok.footer"
+              :is="blok.component"
+              :blok="blok"
+            ></component>
+          </div>
         </div>
       </div>
     </b-col>
@@ -145,6 +152,17 @@ function HEX2RGB(hex) {
 
   .foodmenu {
     justify-content: center;
+  }
+
+  .lock {
+    position: fixed !important;
+    top: 0rem;
+    margin: -15px;
+    background-color: var(--heading-colors);
+    height: 60px;
+    z-index: 100;
+    width: 100%;
+    padding: 0px 15px;
   }
 }
 
