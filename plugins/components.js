@@ -12,6 +12,7 @@ import FlexDisplay from '~/components/FlexDisplay'
 import FlexColumn from '~/components/FlexColumn'
 import iPhoneiFrame from '~/components/iPhoneiFrame'
 import Loading from '~/components/Loading'
+import NuxtLinks from '~/components/NuxtLinks'
 
 Vue.component('ProjectCard', ProjectCard)
 Vue.component('ProjectList', ProjectList)
@@ -26,3 +27,4 @@ Vue.component('FlexDisplay', FlexDisplay)
 Vue.component('FlexColumn', FlexColumn)
 Vue.component('iPhoneiFrame', iPhoneiFrame)
 Vue.component('Loading', Loading)
+Vue.component('NuxtLinks', NuxtLinks)
