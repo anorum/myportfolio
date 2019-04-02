@@ -52,4 +52,15 @@ img {
 .dropdown-menu {
   min-width: 0;
 }
+
+@media (max-width: 768px) {
+  .dropdown-menu.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+}
 </style>

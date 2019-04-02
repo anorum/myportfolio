@@ -112,7 +112,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .container-fluid {
   border-left: 5px solid var(--heading-colors);
   min-height: 100vh;
@@ -149,6 +149,7 @@ export default {
     max-height: 50vh;
     -webkit-filter: drop-shadow(5px 5px 5px #222);
     filter: drop-shadow(5px 5px 5px #222);
+    border-radius: 0px;
   }
 }
 

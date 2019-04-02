@@ -6,7 +6,7 @@
         md="6"
         class="text-md-left text-center mt-4 pl-5 mb-4 justify-content-center align-self-center mt-4 pl-5"
       >
-        <h2 class="white text-uppercase">{{ title }}</h2>
+        <h2 class="white text-uppercase mb-4">{{ title }}</h2>
         <p class="white">{{ introduction }}</p>
         <div class="float-center mt-4 text-center" :style="cssProps">
           <b-button variant="primary" class="projectbutton">View Project</b-button>

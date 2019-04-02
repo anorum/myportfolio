@@ -1,5 +1,5 @@
 <template>
-  <transition name="slide" mode="in-out" appear>
+  <transition name="slide" mode="in-out">
     <b-col
       md="4"
       cols="12"
@@ -7,7 +7,7 @@
       :style="[getBackground.backgroundpath ? {backgroundColor: blok.backgroundcolor, backgroundImage: 'url(' + getBackground.backgroundpath + ')'} : {backgroundColor: blok.backgroundcolor}]"
     >
       <div class="lock">
-        <div class="d-flex justify-content-between mt-4" v-if="blok.backbutton">
+        <div class="d-flex justify-content-between mt-4 sidebarcontrols" v-if="blok.backbutton">
           <nuxt-link to="/">
             <div :style="{ color: textColor }">
               <i class="fas fa-caret-left"></i> Back to Projects
@@ -20,6 +20,9 @@
       </div>
       <div class="sidebar" :style="{ color: textColor }">
         <div :style="{backgroundColor: blok.backgroundcolor}">
+          <div v-if="blok.logo">
+            <img id="logo" :src="blok.logo">
+          </div>
           <div class="title">
             <h2>{{ blok.title }}</h2>
           </div>
@@ -110,6 +113,10 @@ function HEX2RGB(hex) {
   top: 1rem;
 }
 
+#logo {
+  max-width: 160px;
+}
+
 .sidebar {
   bottom: 0;
   display: block;
@@ -125,6 +132,19 @@ function HEX2RGB(hex) {
   -ms-flex-align: end;
   align-items: flex-end;
   position: fixed;
+}
+
+.sidebarcontrols {
+  i {
+    cursor: pointer;
+  }
+  i:hover {
+    color: #d0d0d0 !important;
+  }
+
+  a:hover {
+    color: #d0d0d0 !important;
+  }
 }
 
 .footer-area {
@@ -175,5 +195,45 @@ function HEX2RGB(hex) {
 .slide-enter, .slide-leave-to
 /* .slide-fade-leave-active below version 2.1.8 */ {
   transform: translateX(-90%);
+}
+
+.line-1 {
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+
+.anim-typewriter {
+  animation: typewriter 1s steps(24) 1s 1 normal both,
+    blinkTextCursor 800ms steps(44) infinite normal;
+}
+
+.typewriter-enter-active {
+  animation: typewriter 1s steps(24) 1s 1 normal both,
+    blinkTextCursor 800ms steps(44) infinite normal;
+}
+
+.typewriter-leave-active {
+  animation: typewriter 1s steps(24) 1s 1 normal both reverse,
+    blinkTextCursor 800ms steps(44) infinite normal;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
 }
 </style>

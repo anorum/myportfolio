@@ -28,6 +28,20 @@
           appear
         >
           <div class="content">
+            <div class="spaced-headers ml-auto mr-auto" v-if="!isExternal">
+              <div>
+                <component
+                  :key="blok._uid"
+                  v-for="blok in page.data.story.content.headertext"
+                  :is="blok.component"
+                  :blok="blok"
+                ></component>
+                <div class="line mt-4" :style="{backgroundColor: page.data.story.content.color}"></div>
+              </div>
+            </div>
+            <div v-if="headingimage" id="headingimage">
+              <img src="http://a.storyblok.com/f/55155/614x768/d9f73dd5eb/alex-7461.jpg">
+            </div>
             <div class="content-body">
               <component
                 :key="blok._uid"
@@ -56,7 +70,7 @@ export default {
         version: 'draft'
       })
       .then(page => {
-        console.log(page.data.story.content.sidearea)
+        console.log(page.data.story.content.sidearea[0].backgroundcolor)
         return {
           page
         }
@@ -76,7 +90,7 @@ export default {
   computed: {
     cssProps() {
       return {
-        '--heading-colors': this.page.data.story.content.sidearea
+        '--heading-colors': this.page.data.story.content.sidearea[0]
           .backgroundcolor
       }
     }
@@ -84,11 +98,16 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .container-fluid {
   border-left: 5px solid var(--heading-colors);
   min-height: 100vh;
   transition: all 1s;
+}
+
+#headingimage {
+  text-align: center;
+  margin-top: -20%;
 }
 
 .contentcontainer {
@@ -112,10 +131,9 @@ export default {
 
 .content {
   img {
-    max-width: 55vw;
-    max-height: 50vh;
-    -webkit-filter: drop-shadow(5px 5px 5px #222);
-    filter: drop-shadow(5px 5px 5px #222);
+    max-width: 25vw;
+    max-height: 25vh;
+    margin-bottom: 20px;
   }
 }
 
@@ -133,7 +151,7 @@ export default {
   display: -ms-flexbox;
   display: flex;
   height: auto;
-  padding: 10% 15% 25% 15%;
+  padding: 10% 15% 10% 15%;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
@@ -158,6 +176,26 @@ export default {
 
 .expandicon {
   color: '#F0F0F0';
+  cursor: pointer;
+
+  &:hover {
+    color: #d0d0d0;
+  }
+}
+
+.footer-area {
+  i,
+  a {
+    color: white;
+  }
+
+  i:hover {
+    color: #d0d0d0;
+  }
+
+  a:hover {
+    color: #d0d0d0;
+  }
 }
 
 .fullwidth {
@@ -167,11 +205,20 @@ export default {
   transition-delay: 0.8s;
 }
 
-h3,
 h4 {
   color: var(--heading-colors);
   border-left: 3px solid var(--heading-colors);
   padding-left: 15px;
+}
+
+.card {
+  margin-left: 20px;
+}
+
+.line {
+  width: 66px;
+  height: 4px;
+  border-radius: 2px;
 }
 
 @media (max-width: 768px) {
