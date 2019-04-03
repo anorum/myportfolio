@@ -4,7 +4,7 @@
       <b-col
         sm="12"
         md="6"
-        class="text-md-left text-center mt-4 pl-5 mb-4 justify-content-center align-self-center mt-4 pl-5"
+        class="text-md-left text-center mt-4 mb-4 justify-content-center align-self-center mt-4"
       >
         <h2 class="white text-uppercase mb-4">{{ title }}</h2>
         <p class="white">{{ introduction }}</p>
