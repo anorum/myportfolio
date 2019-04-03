@@ -112,11 +112,20 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .container-fluid {
   border-left: 5px solid var(--heading-colors);
   min-height: 100vh;
   transition: all 1s;
+}
+
+.expandicon {
+  color: black;
+  cursor: pointer;
+
+  &:hover {
+    color: #d0d0d0;
+  }
 }
 
 #headingimage {

@@ -134,19 +134,6 @@ function HEX2RGB(hex) {
   position: fixed;
 }
 
-.sidebarcontrols {
-  i {
-    cursor: pointer;
-  }
-  i:hover {
-    color: #d0d0d0 !important;
-  }
-
-  a:hover {
-    color: #d0d0d0 !important;
-  }
-}
-
 .footer-area {
   padding-top: 25px;
 }

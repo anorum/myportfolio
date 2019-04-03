@@ -27,7 +27,7 @@
           leave-active-class="animated bounceOutRight"
           appear
         >
-          <div class="content">
+          <div class="content aboutcontent">
             <div class="spaced-headers ml-auto mr-auto" v-if="!isExternal">
               <div>
                 <component
@@ -99,6 +99,13 @@ export default {
 </script>
 
 <style lang="scss">
+.aboutcontent {
+  h3 {
+    border: none;
+    color: #0f0f0f;
+  }
+}
+
 .container-fluid {
   border-left: 5px solid var(--heading-colors);
   min-height: 100vh;
@@ -107,7 +114,7 @@ export default {
 
 #headingimage {
   text-align: center;
-  margin-top: -20%;
+  margin-top: -20% !important;
 }
 
 .contentcontainer {
@@ -129,11 +136,21 @@ export default {
   transition-duration: 0.1s;
 }
 
-.content {
+.aboutcontent {
   img {
     max-width: 25vw;
     max-height: 25vh;
     margin-bottom: 20px;
+  }
+
+  h3 {
+    border: none;
+  }
+
+  h4 {
+    color: var(--heading-colors) !important;
+    border-left: 3px solid var(--heading-colors) !important;
+    padding-left: 15px !important;
   }
 }
 
@@ -175,7 +192,7 @@ export default {
 }
 
 .expandicon {
-  color: '#F0F0F0';
+  color: black;
   cursor: pointer;
 
   &:hover {
@@ -203,12 +220,6 @@ export default {
   max-width: 100%;
   transition: all 1s;
   transition-delay: 0.8s;
-}
-
-h4 {
-  color: var(--heading-colors);
-  border-left: 3px solid var(--heading-colors);
-  padding-left: 15px;
 }
 
 .card {

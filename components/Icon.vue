@@ -18,4 +18,16 @@ export default {
   padding-right: 0;
   padding-left: 0;
 }
+
+i {
+  cursor: pointer;
+  color: white;
+}
+i:hover {
+  color: #d0d0d0 !important;
+}
+
+a:hover {
+  color: #d0d0d0 !important;
+}
 </style>
