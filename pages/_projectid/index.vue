@@ -10,7 +10,7 @@
         v-on:hideclicked="fullscreen = true"
       ></component>
       <b-col
-        md="8"
+        lg="8"
         cols="12"
         class="contentcontainer"
         :class="{nopadding: isExternal, fullwidth: fullscreen}"
@@ -226,7 +226,7 @@ h4 {
   padding-left: 15px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .container-fluid {
     border-left: 0px;
   }

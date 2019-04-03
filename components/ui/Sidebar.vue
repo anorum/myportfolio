@@ -1,7 +1,7 @@
 <template>
   <transition name="slide" mode="in-out">
     <b-col
-      md="4"
+      lg="4"
       cols="12"
       class="text-left sidebarcontainer"
       :style="[getBackground.backgroundpath ? {backgroundColor: blok.backgroundcolor, backgroundImage: 'url(' + getBackground.backgroundpath + ')'} : {backgroundColor: blok.backgroundcolor}]"
@@ -142,7 +142,7 @@ function HEX2RGB(hex) {
   padding: 50px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .sidebarcontainer {
     min-height: 30vh;
   }

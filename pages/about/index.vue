@@ -9,7 +9,7 @@
         v-show="!fullscreen"
         v-on:hideclicked="fullscreen = true"
       ></component>
-      <b-col md="8" cols="12" class="contentcontainer" :class="{fullwidth: fullscreen}">
+      <b-col lg="8" cols="12" class="contentcontainer" :class="{fullwidth: fullscreen}">
         <transition
           name="custom-classes-transition"
           enter-active-class="animated bounceInLeft delay"
@@ -104,6 +104,22 @@ export default {
     border: none;
     color: #0f0f0f;
   }
+
+  .spaced-headers {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: auto;
+    padding: 10% 15% 10% 15%;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: left;
+    background-color: #f0f6fa;
+    //max-width: 980px;
+  }
 }
 
 .container-fluid {
@@ -162,22 +178,6 @@ export default {
   }
 }
 
-.spaced-headers {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: auto;
-  padding: 10% 15% 10% 15%;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: left;
-  background-color: #f0f6fa;
-  //max-width: 980px;
-}
-
 .line {
   width: 66px;
   height: 4px;
@@ -232,7 +232,7 @@ export default {
   border-radius: 2px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .container-fluid {
     border-left: 0px;
   }

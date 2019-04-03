@@ -13,7 +13,7 @@
         leave-active-class="animated bounceOutRight"
         appear
       >
-        <b-col md="8" cols="12">
+        <b-col lg="8" cols="12">
           <ProjectList :projects="projects.data.stories"></ProjectList>
         </b-col>
       </transition>

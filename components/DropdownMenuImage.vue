@@ -53,7 +53,7 @@ img {
   min-width: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .dropdown-menu.show {
     display: flex;
     flex-direction: column;

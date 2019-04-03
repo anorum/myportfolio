@@ -57,7 +57,13 @@ module.exports = {
     ['bootstrap-vue/nuxt'],
     [
       'storyblok-nuxt',
-      { accessToken: '0Afppk0YhTL5pUDguXMvCAtt', cacheProvider: 'memory' }
+      {
+        accessToken:
+          process.env.NODE_ENV == 'production'
+            ? 'pHgIgziFk6rbhRvjbzJP3Att'
+            : '0Afppk0YhTL5pUDguXMvCAtt',
+        cacheProvider: 'memory'
+      }
     ]
   ],
   /*
