@@ -72,7 +72,7 @@ export default {
   asyncData(context) {
     return context.app.$storyapi
       .get('cdn/stories/projects/' + context.params.projectid, {
-        version: 'draft',
+        version: process.env.NODE_ENV == 'production' ? 'published' : 'draft',
         sort_by: 'order'
       })
       .then(res => {

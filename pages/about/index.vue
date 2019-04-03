@@ -67,7 +67,7 @@ export default {
   async asyncData({ app }) {
     return app.$storyapi
       .get('cdn/stories/about', {
-        version: 'draft'
+        version: process.env.NODE_ENV == 'production' ? 'published' : 'draft'
       })
       .then(page => {
         console.log(page.data.story.content.sidearea[0].backgroundcolor)

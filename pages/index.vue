@@ -28,10 +28,10 @@ export default {
   async asyncData({ app }) {
     let [page, projects] = await Promise.all([
       app.$storyapi.get('cdn/stories/home', {
-        version: 'draft'
+        version: process.env.NODE_ENV == 'production' ? 'published' : 'draft'
       }),
       app.$storyapi.get('cdn/stories', {
-        version: 'draft',
+        version: process.env.NODE_ENV == 'production' ? 'published' : 'draft',
         starts_with: 'projects/'
       })
     ])
