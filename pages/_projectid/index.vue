@@ -43,14 +43,7 @@
               <img :src="headingimage">
             </div>
             <div class="content-body" :class="{nopadding: isExternal}">
-              <iframe
-                id="jupyter"
-                v-if="isExternal"
-                :src="externalLink"
-                frameborder="0"
-                height="100vh"
-                width="100%"
-              />
+              <iframe id="jupyter" scrolling="no" v-if="isExternal" :src="externalLink" frameborder="0"/>
               <div v-if="!isExternal">
                 <component
                   :key="blok._uid"
@@ -108,6 +101,8 @@ export default {
         window.location.reload()
       }
     })
+
+    document.querySelector("#jupyter").setAttribute("scrolling", "yes")
   },
   computed: {
     cssProps() {
@@ -177,12 +172,11 @@ export default {
   }
 }
 
-/* #jupyter {
+#jupyter {
   min-width: 100% !important;
   max-width: 100% !important;
   min-height: 99vh !important;
-  *width: 100%;
-} */
+}
 
 .nopadding {
   padding: 0px;
