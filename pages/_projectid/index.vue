@@ -176,6 +176,7 @@ export default {
   min-width: 100% !important;
   max-width: 100% !important;
   min-height: 100vh !important;
+  width: 1px;
 }
 html {
   max-width: 100vw !important;
