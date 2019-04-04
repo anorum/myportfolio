@@ -177,9 +177,8 @@ export default {
   max-width: 100% !important;
   min-height: 100vh !important;
 }
-
-#jupyer html {
-  max-width: 100vw;
+html {
+  max-width: 100vw !important;
 }
 
 .nopadding {
