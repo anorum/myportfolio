@@ -43,7 +43,11 @@
               <img :src="headingimage">
             </div>
             <div class="content-body" :class="{nopadding: isExternal}">
-              <iframe id="jupyter" scrolling="no" v-if="isExternal" :src="externalLink" frameborder="0"/>
+              <iframe id="jupyter" v-if="isExternal && !isMobile" :src="externalLink" frameborder="0"/>
+            <div class="text-center" v-if="isMobile">
+              No on likes a small iFrame. 
+              <a class="btn btn-primary" role="button" :href="externalLink"> View Jupyter Notebook </a>
+            </div>
               <div v-if="!isExternal">
                 <component
                   :key="blok._uid"
@@ -66,7 +70,8 @@ import marked from 'marked'
 export default {
   data() {
     return {
-      fullscreen: false
+      fullscreen: false,
+      windowWidth: 0
     }
   },
   asyncData(context) {
@@ -101,14 +106,23 @@ export default {
         window.location.reload()
       }
     })
+    this.windowWidth = window.innerWidth
+    window.addEventListener('resize', () => {
+      this.windowWidth = window.innerWidth
+      console.log(this.isMobile)
+    })
 
-    document.querySelector("#jupyter").setAttribute("scrolling", "yes")
+
+
   },
   computed: {
     cssProps() {
       return {
         '--heading-colors': this.color
       }
+    },
+    isMobile() {
+      return this.windowWidth <= 500
     }
   }
 }
