@@ -44,7 +44,7 @@
             </div>
             <div class="content-body" :class="{nopadding: isExternal}">
               <div class="iframe-container" style="overflow:auto;-webkit-overflow-scrolling:touch" v-if="isExternal">
-                <iframe id="jupyter" width="100%" :src="externalLink" frameborder="0"/>
+                <iframe id="jupyter" style="width:100%;height:100%" :src="externalLink" frameborder="0"/>
               </div>
               <div v-if="!isExternal">
                 <component
