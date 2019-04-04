@@ -47,7 +47,6 @@
                 id="jupyter"
                 v-if="isExternal"
                 :src="externalLink"
-                scrolling="no"
                 frameborder="0"
                 height="100vh"
                 width="100%"
