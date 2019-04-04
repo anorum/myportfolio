@@ -43,9 +43,15 @@
               <img :src="headingimage">
             </div>
             <div class="content-body" :class="{nopadding: isExternal}">
-              <div class="iframe-container" style="overflow:auto;-webkit-overflow-scrolling:touch" v-if="isExternal">
-                <iframe id="jupyter" style="width:100%;height:100%" :src="externalLink" frameborder="0"/>
-              </div>
+              <iframe
+                id="jupyter"
+                v-if="isExternal"
+                :src="externalLink"
+                scrolling="no"
+                frameborder="0"
+                height="100vh"
+                width="100%"
+              />
               <div v-if="!isExternal">
                 <component
                   :key="blok._uid"
@@ -175,11 +181,9 @@ export default {
 #jupyter {
   min-width: 100% !important;
   max-width: 100% !important;
-  min-height: 100vh !important;
-  width: 1px;
-}
-html {
-  max-width: 100vw !important;
+  min-height: 99vh !important;
+  width: 100px;
+  *width: 100%;
 }
 
 .nopadding {
