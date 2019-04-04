@@ -177,13 +177,12 @@ export default {
   }
 }
 
-#jupyter {
+/* #jupyter {
   min-width: 100% !important;
   max-width: 100% !important;
   min-height: 99vh !important;
-  width: 100px;
   *width: 100%;
-}
+} */
 
 .nopadding {
   padding: 0px;
