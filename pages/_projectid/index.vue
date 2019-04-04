@@ -173,18 +173,13 @@ export default {
 }
 
 #jupyter {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
+  min-width: 100% !important;
+  max-width: 100% !important;
+  min-height: 100vh !important;
 }
 
-.iframe-container {
-  position: relative;
-  overflow: hidden;
-  padding-top: 150%;
+#jupyer html {
+  max-width: 100vw;
 }
 
 .nopadding {
