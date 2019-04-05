@@ -43,11 +43,22 @@
               <img :src="headingimage">
             </div>
             <div class="content-body" :class="{nopadding: isExternal}">
-              <iframe id="jupyter" v-if="isExternal && !isMobile" :src="externalLink" frameborder="0"/>
-            <div class="text-center" v-if="isMobile">
-              No on likes a small iFrame. 
-              <a class="btn btn-primary" role="button" :href="externalLink"> View Jupyter Notebook </a>
-            </div>
+              <iframe
+                id="jupyter"
+                v-if="isExternal && !isMobile"
+                :src="externalLink"
+                frameborder="0"
+              />
+              <div class="text-center" v-if="isMobile">
+                <br>
+                <br>
+                <a
+                  class="btn btn-primary"
+                  role="button"
+                  :href="externalLink"
+                  target="_blank"
+                >View Jupyter Notebook</a>
+              </div>
               <div v-if="!isExternal">
                 <component
                   :key="blok._uid"
@@ -111,9 +122,6 @@ export default {
       this.windowWidth = window.innerWidth
       console.log(this.isMobile)
     })
-
-
-
   },
   computed: {
     cssProps() {
@@ -142,6 +150,13 @@ export default {
   &:hover {
     color: #d0d0d0;
   }
+}
+
+.projectbutton {
+  background-color: var(--btn-color-darkened);
+  border: 1px solid var(--btn-color-darkened);
+  width: 250px;
+  transition: all 0.3s;
 }
 
 #headingimage {
@@ -189,11 +204,11 @@ export default {
 #jupyter {
   min-width: 100% !important;
   max-width: 100% !important;
-  min-height: 99vh !important;
+  min-height: 92vh !important;
 }
 
 .nopadding {
-  padding: 0px;
+  padding: 0px !important;
 }
 
 .spaced-headers {

@@ -32,7 +32,7 @@
           <div class="description">
             <component :key="blok._uid" v-for="blok in blok.body" :is="blok.component" :blok="blok"></component>
           </div>
-          <div class="footer-area">
+          <div class="footer-area text-center">
             <component
               :key="blok._uid"
               v-for="blok in blok.footer"
@@ -41,6 +41,9 @@
             ></component>
           </div>
         </div>
+      </div>
+      <div class="footer">
+        <my-footer/>
       </div>
     </b-col>
   </transition>
@@ -115,6 +118,11 @@ function HEX2RGB(hex) {
 
 #logo {
   max-width: 160px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
 }
 
 .sidebar {
