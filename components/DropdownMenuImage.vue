@@ -51,11 +51,15 @@ img {
 
 .dropdown-menu {
   min-width: 0;
+  display: flex;
+  overflow: scroll;
+  width: 100%;
 }
 
 @media (max-width: 992px) {
   .dropdown-menu.show {
     display: flex;
+    top: 100% !important;
     flex-direction: column;
     justify-content: center;
     align-items: center;
