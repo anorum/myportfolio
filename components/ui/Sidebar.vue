@@ -49,6 +49,7 @@
   </transition>
 </template>
 
+
 <script>
 import { mapGetters } from 'vuex'
 export default {
@@ -122,7 +123,11 @@ function HEX2RGB(hex) {
 
 .footer {
   position: fixed;
-  bottom: 0;
+  bottom: 0px;
+  left: 0px;
+  width: 33.3%;
+  padding: 0px;
+  margin: 0px;
 }
 
 .sidebar {
@@ -178,6 +183,11 @@ function HEX2RGB(hex) {
     z-index: 100;
     width: 100%;
     padding: 0px 15px;
+  }
+
+  .footer {
+    position: relative;
+    width: 100%;
   }
 }
 

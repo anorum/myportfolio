@@ -1,6 +1,6 @@
 <template>
   <nuxt-link :to="blok.path">
-    <h5>{{ blok.linktitle }}</h5>
+    <h6>{{ blok.linktitle }}</h6>
   </nuxt-link>
 </template>
 
@@ -11,11 +11,11 @@ export default {
 </script>
 
 <style scoped>
-h5 {
+h6 {
   color: white;
 }
 
-h5:hover {
+h6:hover {
   color: #d0d0d0;
 }
 </style>

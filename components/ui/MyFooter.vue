@@ -1,32 +1,52 @@
 <template>
-  <div>
-    <b-navbar class="darkgrey">
-      <b-navbar-nav class="mr-auto ml-auto">
-        <b-nav-item href="https://github.com/anorum">
+  <div class="footernav">
+    <ul class="mr-auto ml-auto">
+      <li>
+        <a href="https://github.com/anorum" target="_blank">
           <i class="fab fa-github social-img"></i>
-        </b-nav-item>
-        <b-nav-item href="https://www.linkedin.com/in/alex-norum/">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/alex-norum/" target="_blank">
           <i class="fab fa-linkedin-in social-img"></i>
-        </b-nav-item>
-        <b-nav-item href="mailto:alexandernorum@gmail.com">
+        </a>
+      </li>
+      <li>
+        <a href="mailto:alexandernorum@gmail.com" target="_blank">
           <i class="fas fa-envelope-square social-img"></i>
-        </b-nav-item>
-        <b-nav-item href="/about">
-          <h6>Resume</h6>
-        </b-nav-item>
-      </b-navbar-nav>
-    </b-navbar>
+        </a>
+      </li>
+      <li>
+        <nuxt-links :blok="{linktitle: 'Resume', path: '/about' }"></nuxt-links>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-export default {
-  props: ['blok']
-}
+export default {}
 </script>
 
 <style scoped>
 img {
   max-width: 40px;
+}
+
+.footernav {
+  display: flex;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0px;
+}
+
+li {
+  padding: 0 15px 0 15px;
+}
+
+i {
+  font-size: 1.2em;
 }
 </style>
