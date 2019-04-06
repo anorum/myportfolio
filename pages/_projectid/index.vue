@@ -57,7 +57,7 @@
                   role="button"
                   :href="externalLink"
                   target="_blank"
-                >View Jupyter Notebook</a>
+                >View Project</a>
               </div>
               <div v-if="!isExternal">
                 <component
