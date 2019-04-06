@@ -49,7 +49,7 @@
                 :src="externalLink"
                 frameborder="0"
               />
-              <div class="text-center" v-if="isMobile">
+              <div class="text-center" v-if="isMobile && isExternal">
                 <br>
                 <br>
                 <a
