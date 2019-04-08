@@ -167,6 +167,11 @@ function HEX2RGB(hex) {
   .sidebarcontainer {
     min-height: 30vh;
   }
+
+  .typed-element {
+    justify-content: center;
+  }
+
   .sidebar {
     position: static;
     text-align: center !important;
