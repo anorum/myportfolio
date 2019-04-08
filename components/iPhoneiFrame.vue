@@ -3,16 +3,18 @@
     <div class="iphone-x">
       <div class="side">
         <div class="screen">
-          <iframe
-            src="https://ykfi34.axshare.com/home.html"
-            frameborder="0"
-            marginwidth="0"
-            marginheight="0"
-            hspace="0"
-            vspace="0"
-            scrolling="yes"
-            allowtransparency="true"
-          ></iframe>
+          <div style="overflow:auto;-webkit-overflow-scrolling:touch">
+            <iframe
+              src="https://ykfi34.axshare.com/home.html"
+              frameborder="0"
+              marginwidth="0"
+              marginheight="0"
+              hspace="0"
+              vspace="0"
+              scrolling="yes"
+              allowtransparency="true"
+            ></iframe>
+          </div>
         </div>
       </div>
       <div class="line"></div>
