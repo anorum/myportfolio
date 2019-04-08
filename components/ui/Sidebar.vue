@@ -14,7 +14,7 @@
             </div>
           </nuxt-link>
           <div @click="$emit('hideclicked')">
-            <i class="fas fa-times" :style="{ color: textColor }"></i>
+            <i class="fas fa-times closeicon" :style="{ color: textColor }"></i>
           </div>
         </div>
       </div>
@@ -105,6 +105,12 @@ function HEX2RGB(hex) {
 </script>
 
 <style scoped lang="scss">
+.sidebarcontrols {
+  .closeicon {
+    font-size: 1.3em;
+  }
+}
+
 .sidebarcontainer {
   background-repeat: repeat;
   background-size: auto;
