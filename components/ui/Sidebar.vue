@@ -24,7 +24,9 @@
             <img id="logo" :src="blok.logo">
           </div>
           <div class="title">
-            <h2>{{ blok.title }}</h2>
+            <vue-typed-js :strings="[blok.title]" :typeSpeed="50" :startDelay="1000">
+              <h2 class="typing"></h2>
+            </vue-typed-js>
           </div>
           <div class="subtitle">
             <p class="lead">{{blok.subtitle}}</p>
@@ -165,6 +167,11 @@ function HEX2RGB(hex) {
   .sidebarcontainer {
     min-height: 30vh;
   }
+
+  .typed-element {
+    justify-content: center;
+  }
+
   .sidebar {
     position: static;
     text-align: center !important;

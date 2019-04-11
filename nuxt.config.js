@@ -49,7 +49,11 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ['@/plugins/bootstrap-vue', '@/plugins/components'],
+  plugins: [
+    '@/plugins/bootstrap-vue',
+    '@/plugins/components',
+    '@/plugins/vue-typed'
+  ],
 
   /*
   ** Nuxt.js modules
