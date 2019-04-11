@@ -204,7 +204,7 @@ export default {
 #jupyter {
   min-width: 100% !important;
   max-width: 100% !important;
-  min-height: 92vh !important;
+  min-height: 98vh !important;
 }
 
 .nopadding {
