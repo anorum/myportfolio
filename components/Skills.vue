@@ -1,6 +1,6 @@
 <template>
   <b-row>
-    <b-col v-for="skill in blok.skills" :key="skill" class="text-center">
+    <b-col v-for="skill in blok.skills" :key="skill.name" class="text-center">
       <i :class="[skill.icon.type, skill.icon.icon]" class="fa-2x"></i>
       <br>
       <p>{{ skill.name }}</p>
