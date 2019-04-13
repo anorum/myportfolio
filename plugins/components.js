@@ -15,6 +15,7 @@ import Loading from '~/components/Loading'
 import NuxtLinks from '~/components/NuxtLinks'
 import WorkCard from '~/components/WorkCard'
 import MyFooter from '~/components/ui/MyFooter'
+import Skills from '~/components/Skills'
 
 Vue.component('ProjectCard', ProjectCard)
 Vue.component('ProjectList', ProjectList)
@@ -32,3 +33,4 @@ Vue.component('Loading', Loading)
 Vue.component('NuxtLinks', NuxtLinks)
 Vue.component('WorkCard', WorkCard)
 Vue.component('MyFooter', MyFooter)
+Vue.component('Skills', Skills)

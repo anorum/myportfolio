@@ -9,16 +9,16 @@
       <div class="lock">
         <div class="d-flex justify-content-between mt-4 sidebarcontrols" v-if="blok.backbutton">
           <nuxt-link to="/">
-            <div :style="{ color: textColor }">
+            <div :style="{ color: 'white' }">
               <i class="fas fa-caret-left"></i> Back to Projects
             </div>
           </nuxt-link>
           <div @click="$emit('hideclicked')">
-            <i class="fas fa-times closeicon" :style="{ color: textColor }"></i>
+            <i class="fas fa-times closeicon" :style="{ color: 'white' }"></i>
           </div>
         </div>
       </div>
-      <div class="sidebar" :style="{ color: textColor }">
+      <div class="sidebar" :style="{ color: 'white' }">
         <div :style="{backgroundColor: blok.backgroundcolor}">
           <div v-if="blok.logo">
             <img id="logo" :src="blok.logo">

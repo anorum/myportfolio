@@ -69,6 +69,13 @@ export default {
 .projectimage {
   max-width: 75% !important;
   transition: all 0.3s;
+  margin: 40px;
+}
+
+@media (max-width: 992px) {
+  .projectimage {
+    margin: 40px 40px 0 40px;
+  }
 }
 
 .white {
