@@ -74,6 +74,12 @@ export default {
 
 @media (max-width: 992px) {
   .projectimage {
+    margin: 40px 40px 40px 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .projectimage {
     margin: 40px 40px 0 40px;
   }
 }

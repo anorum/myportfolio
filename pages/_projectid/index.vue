@@ -173,6 +173,7 @@ export default {
   animation-delay: 0s;
   position: fixed;
   top: 1rem;
+  z-index: 1000;
 }
 
 .delay {
@@ -261,6 +262,13 @@ h4 {
 @media (max-width: 992px) {
   .container-fluid {
     border-left: 0px;
+  }
+
+  .content img {
+    text-align: center;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
   }
 }
 
