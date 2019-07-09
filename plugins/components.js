@@ -16,6 +16,8 @@ import NuxtLinks from '~/components/NuxtLinks'
 import WorkCard from '~/components/WorkCard'
 import MyFooter from '~/components/ui/MyFooter'
 import Skills from '~/components/Skills'
+import PostList from '~/components/Posts/PostList'
+import PostCard from '~/components/Posts/PostCard'
 
 Vue.component('ProjectCard', ProjectCard)
 Vue.component('ProjectList', ProjectList)
@@ -34,3 +36,5 @@ Vue.component('NuxtLinks', NuxtLinks)
 Vue.component('WorkCard', WorkCard)
 Vue.component('MyFooter', MyFooter)
 Vue.component('Skills', Skills)
+Vue.component('PostList', PostList)
+Vue.component('PostCard', PostCard)

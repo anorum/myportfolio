@@ -17,7 +17,7 @@
         md="6"
         class="justify-content-center align-self-center d-flex projectimagecontainer"
       >
-        <b-img rounded :src="thumbnail" class="projectimage align-self-center"/>
+        <b-img rounded :src="thumbnail" class="projectimage align-self-center" />
       </b-col>
       <div class="card-footer text-right mr-10" style="width:100%">
         <b-badge

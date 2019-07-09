@@ -14,7 +14,7 @@
         appear
       >
         <b-col lg="8" cols="12">
-          <ProjectList :projects="projects.data.stories"></ProjectList>
+          <PostList :posts="posts.data.stories"></PostList>
         </b-col>
       </transition>
     </b-row>
@@ -26,18 +26,19 @@ import { mapActions } from 'vuex'
 
 export default {
   async asyncData({ app }) {
-    let [page, projects] = await Promise.all([
-      app.$storyapi.get('cdn/stories/home', {
-        version: process.env.NODE_ENV == 'production' ? 'published' : 'draft'
-      }),
-      app.$storyapi.get('cdn/stories', {
+    let [page, posts] = await Promise.all([
+      app.$storyapi.get('cdn/stories/blog', {
         version: process.env.NODE_ENV == 'production' ? 'published' : 'draft',
-        starts_with: 'projects/'
+        component: 'page'
+      }),
+      app.$storyapi.get('cdn/stories/blog', {
+        version: process.env.NODE_ENV == 'production' ? 'published' : 'draft',
+        component: 'blog-post'
       })
     ])
     return {
       page,
-      projects
+      posts
     }
   },
   mounted() {
