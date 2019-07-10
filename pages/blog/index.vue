@@ -3,7 +3,7 @@
     <b-row>
       <component
         :key="blok._uid"
-        v-for="blok in page.data.story.content.sidearea"
+        v-for="blok in page.content.sidearea"
         :is="blok.component"
         :blok="blok"
       ></component>
@@ -14,7 +14,7 @@
         appear
       >
         <b-col lg="8" cols="12">
-          <PostList :posts="posts.data.stories"></PostList>
+          <PostList :posts="posts"></PostList>
         </b-col>
       </transition>
     </b-row>
@@ -26,20 +26,17 @@ import { mapActions } from 'vuex'
 
 export default {
   async asyncData({ app }) {
-    let [page, posts] = await Promise.all([
-      app.$storyapi.get('cdn/stories/blog', {
-        version: process.env.NODE_ENV == 'production' ? 'published' : 'draft',
-        component: 'page'
-      }),
-      app.$storyapi.get('cdn/stories/blog', {
-        version: process.env.NODE_ENV == 'production' ? 'published' : 'draft',
-        component: 'blog-post'
-      })
-    ])
-    return {
-      page,
-      posts
-    }
+    let {
+      data: { stories: data }
+    } = await app.$storyapi.get('cdn/stories', {
+      version: process.env.NODE_ENV == 'production' ? 'published' : 'draft',
+      starts_with: 'blog'
+    })
+
+    let page = data.filter(story => story.content.component === 'page')[0]
+    let posts = data.filter(story => story.content.component === 'blog-post')
+
+    return { page, posts }
   },
   mounted() {
     this.$storybridge.on(['input', 'published', 'change'], event => {
