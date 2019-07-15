@@ -6,6 +6,7 @@
         v-for="blok in page.content.sidearea"
         :is="blok.component"
         :blok="blok"
+        :hideX="true"
       ></component>
       <transition
         name="custom-classes-transition"

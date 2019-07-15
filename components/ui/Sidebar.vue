@@ -13,6 +13,16 @@
               <i class="fas fa-caret-left"></i> Back to Projects
             </div>
           </nuxt-link>
+          <div @click="$emit('hideclicked')" v-if="!hideX">
+            <i class="fas fa-times closeicon" :style="{ color: 'white' }"></i>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between mt-4 sidebarcontrols" v-if="blok.backblog">
+          <nuxt-link to="/Blog">
+            <div :style="{ color: 'white' }">
+              <i class="fas fa-caret-left"></i> Back to Blog
+            </div>
+          </nuxt-link>
           <div @click="$emit('hideclicked')">
             <i class="fas fa-times closeicon" :style="{ color: 'white' }"></i>
           </div>
@@ -21,7 +31,7 @@
       <div class="sidebar" :style="{ color: 'white' }">
         <div :style="{backgroundColor: blok.backgroundcolor}">
           <div v-if="blok.logo">
-            <img id="logo" :src="blok.logo">
+            <img id="logo" :src="blok.logo" />
           </div>
           <div class="title">
             <vue-typed-js :strings="[blok.title]" :typeSpeed="50" :startDelay="1000">
@@ -45,7 +55,7 @@
         </div>
       </div>
       <div class="footer">
-        <my-footer/>
+        <my-footer />
       </div>
     </b-col>
   </transition>
@@ -55,7 +65,13 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
-  props: ['blok'],
+  props: {
+    blok: Object,
+    hideX: {
+      type: Boolean,
+      default: false
+    }
+  },
   computed: {
     ...mapGetters(['getBackground']),
     textColor() {

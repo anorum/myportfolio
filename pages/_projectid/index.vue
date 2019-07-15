@@ -40,7 +40,7 @@
               </div>
             </div>
             <div v-if="headingimage" id="headingimage">
-              <img :src="headingimage">
+              <img :src="headingimage" />
             </div>
             <div class="content-body" :class="{nopadding: isExternal}">
               <iframe
@@ -50,8 +50,8 @@
                 frameborder="0"
               />
               <div class="text-center" v-if="isMobile && isExternal">
-                <br>
-                <br>
+                <br />
+                <br />
                 <a
                   class="btn btn-primary"
                   role="button"
@@ -120,7 +120,6 @@ export default {
     this.windowWidth = window.innerWidth
     window.addEventListener('resize', () => {
       this.windowWidth = window.innerWidth
-      console.log(this.isMobile)
     })
   },
   computed: {
